@@ -29,14 +29,14 @@ En Windows (el comando es el mismo, solo cambia cómo activas el ambiente).
 Antes de trabajar en tu proyecto, activa el ambiente correspondiente:
 En macOS/Linux:
 
-```c# . .venv/bin/activate ```
+```. .venv/bin/activate ```
 
 En Windows, el comando para activar el ambiente varía, pero el proceso es similar.
 Instalación de Flask:
 
 Con el ambiente activado, usa el siguiente comando para instalar Flask:
 
-```c# pip install Flask ```
+``` pip install Flask ```
 
 Una vez instalado Flask, puedes comenzar a trabajar en tu proyecto.
 
@@ -53,7 +53,7 @@ pip install flask-restx
 #### Estructura de Archivos Actualizada
 A continuación, hemos actualizado la estructura de archivos para acomodar Flask-RESTX y organizar nuestro proyecto de manera adecuada:
 
-```
+```c#
 mi_api_flask/
 │
 ├── app/
@@ -73,11 +73,11 @@ Los endpoints de tu API se definen en app/routes.py, utilizando el decorador @ma
 ### Ejecutar la Aplicación y Acceder a Swagger UI
 Para iniciar tu aplicación Flask con Flask-RESTX, asegúrate de que el ambiente virtual esté activo y ejecuta:
 
-```c# python run.py ```
+``` python run.py ```
 
 Una vez que la aplicación esté corriendo, puedes acceder a la interfaz de Swagger UI automáticamente generada por Flask-RESTX visitando:
 
-```c# http://127.0.0.1:5000 ```
+``` http://127.0.0.1:5000 ```
 
 En esta interfaz, encontrarás documentados todos los endpoints disponibles en tu API, con opciones para probarlos directamente desde el navegador.
 
@@ -85,7 +85,7 @@ Listar Dependencias con pip freeze
 Es importante documentar las dependencias exactas que tu proyecto utiliza. Para hacerlo, puedes utilizar el comando pip freeze para generar una lista de las bibliotecas instaladas en tu ambiente virtual, junto con sus versiones. Ejecuta el siguiente comando para crear un archivo requirements.txt:
 
 
-```c# pip freeze > requirements.txt ```
+``` pip freeze > requirements.txt ```
 
 Este archivo requirements.txt debería incluir entradas para Flask, Flask-RESTX, y cualquier otra dependencia que hayas instalado.
 
@@ -98,38 +98,38 @@ El primer paso para dockerizar tu aplicación Flask es crear un Dockerfile. Este
 
 
 ##### Establece la imagen base
-```c# FROM python:3.9-alpine ```
+``` FROM python:3.9-alpine ```
 
 ##### Define el directorio de trabajo en el contenedor
-```c# WORKDIR /app ```
+``` WORKDIR /app ```
 
 ##### Copia el archivo de dependencias primero, para aprovechar la caché de Docker
-```c# COPY requirements.txt . ```
+``` COPY requirements.txt . ```
 
 ##### Instala las dependencias de la aplicación
 RUN pip install -r requirements.txt ```
 
 ##### Copia el resto del código fuente de la aplicación en el contenedor
-```c# COPY . . ```
+``` COPY . . ```
 
 ##### Expone el puerto en el que la aplicación se ejecutará dentro del contenedor
-```c#  EXPOSE 5000 ```
+```  EXPOSE 5000 ```
 
 ##### Define el comando para iniciar la aplicación
-```c# CMD ["flask", "run", "--host=0.0.0.0"] ```
+``` CMD ["flask", "run", "--host=0.0.0.0"] ```
 
 
 ## Construcción de la Imagen Docker
 Una vez que tienes tu Dockerfile, el siguiente paso es construir la imagen Docker de tu aplicación. Este proceso lee el Dockerfile y ejecuta las instrucciones contenidas en él. Puedes construir la imagen con el siguiente comando:
 
-```c# docker build -t <nombre de la imagen> . ```
+``` docker build -t <nombre de la imagen> . ```
 
 Este comando construye la imagen Docker, con la etiqueta (-t) <nombre de la imagen> .
 
 #### Ejecución del Contenedor
 Con la imagen Docker ya construida, el siguiente paso es ejecutar un contenedor basado en esa imagen. Esto se hace con el comando docker run, como se muestra a continuación:
 
-```c# docker run -d -p 8000:8000 --name <nombre del contenedor> <nombre de la imagen> ```
+```docker run -d -p 8000:8000 --name <nombre del contenedor> <nombre de la imagen> ```
 
 Este comando inicia un contenedor en modo detenido (-d), mapea el puerto 8000 del host al puerto 8000 del contenedor (-p 8000:8000), y le da al contenedor el nombre cont_backend_notas.
 
