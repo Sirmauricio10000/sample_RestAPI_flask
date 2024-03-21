@@ -107,7 +107,7 @@ El primer paso para dockerizar tu aplicación Flask es crear un Dockerfile. Este
 ``` COPY requirements.txt . ```
 
 ##### Instala las dependencias de la aplicación
-RUN pip install -r requirements.txt ```
+``` RUN pip install -r requirements.txt ```
 
 ##### Copia el resto del código fuente de la aplicación en el contenedor
 ``` COPY . . ```
@@ -129,12 +129,12 @@ Este comando construye la imagen Docker, con la etiqueta (-t) <nombre de la imag
 #### Ejecución del Contenedor
 Con la imagen Docker ya construida, el siguiente paso es ejecutar un contenedor basado en esa imagen. Esto se hace con el comando docker run, como se muestra a continuación:
 
-```docker run -d -p 8000:8000 --name <nombre del contenedor> <nombre de la imagen> ```
+```docker run -d -p 5000:5000 --name <nombre del contenedor> <nombre de la imagen> ```
 
 Este comando inicia un contenedor en modo detenido (-d), mapea el puerto 8000 del host al puerto 8000 del contenedor (-p 8000:8000), y le da al contenedor el nombre cont_backend_notas.
 
 ###### Opcional:
-En linux, ejecuta el comando  ``` ./start.sh ``` y generará el contenedor corriendo a partir del dockerfile automaticamente.
+En linux, ejecuta el script  ``` start.sh ``` y generará el contenedor corriendo a partir del dockerfile automaticamente.
 
 #### Acceso a la Aplicación
 Una vez que el contenedor está corriendo, puedes acceder a tu aplicación Flask navegando a http://localhost:5000 en tu navegador. Esto te llevará a la interfaz de usuario de Swagger donde podrás interactuar con tu API.
