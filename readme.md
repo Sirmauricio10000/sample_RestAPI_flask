@@ -137,5 +137,5 @@ Este comando inicia un contenedor en modo detenido (-d), mapea el puerto 8000 de
 En linux, ejecuta el comando  ``` ./start.sh ``` y generará el contenedor corriendo a partir del dockerfile automaticamente.
 
 #### Acceso a la Aplicación
-Una vez que el contenedor está corriendo, puedes acceder a tu aplicación Flask navegando a http://localhost:8000 en tu navegador. Esto te llevará a la interfaz de usuario de Swagger donde podrás interactuar con tu API.
+Una vez que el contenedor está corriendo, puedes acceder a tu aplicación Flask navegando a http://localhost:5000 en tu navegador. Esto te llevará a la interfaz de usuario de Swagger donde podrás interactuar con tu API.
 
