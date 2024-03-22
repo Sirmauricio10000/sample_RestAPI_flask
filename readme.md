@@ -24,14 +24,25 @@ cd myproject
 python3 -m venv .venv
 ```
 En Windows (el comando es el mismo, solo cambia cómo activas el ambiente).
+
+### Clonar el repositorio:
+
+Para descargar el repositorio es necesario utilizar la terminal de tu computador. Ubicado en la carpeta deseada, ejecutar el siguiente comando:
+
+``` git clone https://github.com/Sirmauricio10000/sample_RestAPI_flask ```
+
 #### Activación del ambiente:
+
 
 Antes de trabajar en tu proyecto, activa el ambiente correspondiente:
 En macOS/Linux:
 
-```. .venv/bin/activate ```
+```. venv/bin/activate ```
 
 En Windows, el comando para activar el ambiente varía, pero el proceso es similar.
+
+```. venv\Scripts\activate ```
+
 Instalación de Flask:
 
 Con el ambiente activado, usa el siguiente comando para instalar Flask:
