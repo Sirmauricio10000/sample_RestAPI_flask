@@ -142,7 +142,7 @@ Con la imagen Docker ya construida, el siguiente paso es ejecutar un contenedor 
 
 ```docker run -d -p 5000:5000 --name <nombre del contenedor> <nombre de la imagen> ```
 
-Este comando inicia un contenedor en modo detenido (-d), mapea el puerto 8000 del host al puerto 8000 del contenedor (-p 8000:8000), y le da al contenedor el nombre cont_backend_notas.
+Este comando inicia un contenedor en modo detenido (-d), mapea el puerto 5000 del host al puerto 5000 del contenedor (-p 5000:5000), y le da al contenedor el nombre cont_backend_notas.
 
 ###### Opcional:
 En linux, ejecuta el script  ``` start.sh ``` y generará el contenedor corriendo a partir del dockerfile automaticamente.
